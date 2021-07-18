@@ -1,0 +1,23 @@
+name: DEMO
+
+on: push
+
+jobs:
+  build-and-push:
+    name: DEMO
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: DEMO
+      uses: prosperTo/create-yaml-demo@main
+      with:
+        file-name: 'deployment'
+        type: '.yaml'
+        params: '{"apiVersion":"apps/v1","kind":"Deployment","metadata":{"name":"backend-susa-bus","namespace":"backend-susa-bus-qa","labels":{"app":"bus-app"},"annotations":null},"spec":{"selector":{"matchLabels":{"app":"bus-app"}},"replicas":2,"strategy":{"type":"RollingUpdate","rollingUpdate":{"maxSurge":1,"maxUnavailable":0}},"template":{"metadata":{"labels":{"app":"bus-app"}},"spec":{"containers":[{"name":"bus-app","image":"serviciosurbanos/susa-backend-qa:v0.0.23-Beta","imagePullPolicy":"Always","ports":[{"containerPort":5000}]}],"imagePullSecrets":[{"name":"dhserviciosurbanos"}]}}}}'
+    
+    - name: view env.json
+      run: ls -a
+
+    - name: view env.json
+      run: cat deployment.yaml

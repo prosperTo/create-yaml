@@ -1,0 +1,21 @@
+name: 'create-yaml'
+description: 'Create any .yaml or .yml'
+inputs:
+  file-name:
+    description: 'The data of contains yaml file'
+    required: true
+  type:
+    description: 'Type is .yaml or .yml'
+    required: true
+  params:
+    description: 'The paramss of containg this yaml'
+    required: true
+outputs:
+  data:
+    description: 'Descriptions'
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'book-open'  
+  color: 'yellow'

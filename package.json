@@ -1,0 +1,13 @@
+{
+  "name": "create-dockerfile",
+  "version": "1.0.0",
+  "description": "Create Dockerfile with params",
+  "main": "index.js",
+  "author": "Tomas Coeli",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0",
+    "yaml": "2.0.0-7"
+  }
+}
